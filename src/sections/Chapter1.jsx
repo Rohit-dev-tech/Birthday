@@ -19,41 +19,40 @@ const Chapter1 = () => {
     {
       id: 1,
       title: "Birthday Wish",
-      date: "August 2020",
-      description: "It all started with a simple 'Happy Birthday' message. A tiny spark that set our world in motion."
+      date: "October 2020",
+      description: "It all started with a simple 'Happy Birthday' message from You  on my speacial day. A tiny spark that set our world in motion."
     },
     {
       id: 2,
-      title: "Instagram Reels",
-      date: "September 2020",
-      description: "Sharing memes, songs, and stupid reels. Finding out how incredibly similar our sense of humor is."
+      title: "Instagram Reels Sharing ",
+      date: "From October  2020",
+      description: "Sharing memes, reels and all from that day , btw Initiative mi ghetla hota sang bara first reel konti hoti apli 😏."
     },
     {
       id: 3,
       title: "Daily Conversations",
-      date: "October 2020",
-      description: "Conversations shifted from morning wishes to late-night calls. The days felt incomplete without you."
+      date: "From December 2020",
+      description: "Conversations shifted from morning wishes to late-night Chatting. The days felt incomplete without you my Dear 💓"
     },
     {
       id: 4,
       title: "Sharing Everything",
-      date: "November 2020",
+      date: "there is no specific date",
       description: "Opening up about our secrets, dreams, and fears. We slowly became each other's safest harbor."
     },
     {
       id: 5,
       title: "People Teasing Us",
-      date: "December 2020",
-      description: "Classmates noticed the smiles. Friends kept laughing and pairing us up. The secret was getting out."
+      date: "Full 11th",
+      description: "Classmates noticed the smiles. Friends kept laughing and pairing us up. out Tshirt Color matching Speacially that Red one and Brown one "
     },
     {
       id: 6,
-      title: "Falling in Love",
-      date: "January 2021",
-      description: "There was no turning back. In the cold of winter, my heart found the warmth it was looking for in you."
+      title: "Falling in Love but no one confess",
+      date: "April 2023",
+      description: "Maybe We both know we Love each other but we are afraid of losing our friendship dear"
     }
   ];
-
   useEffect(() => {
     // GSAP ScrollTrigger to fade in the whole notebook paper panel
     gsap.fromTo(paperRef.current, 
