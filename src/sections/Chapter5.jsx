@@ -12,7 +12,7 @@ import creatingMemoriesImg from '../assets/creating_memories.jpg';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const PolaroidCard = ({ title, caption, index, imgPath }) => {
+const PolaroidCard = ({ title, caption, index, imgPath, focal }) => {
   const cardRef = useRef(null);
 
   // Mouse hover 3D tilt effect logic
@@ -51,7 +51,12 @@ const PolaroidCard = ({ title, caption, index, imgPath }) => {
     >
       {/* Polaroid Image Box */}
       <div className="w-full aspect-[4/3] bg-zinc-200 border border-zinc-300 rounded-sm overflow-hidden relative flex flex-col justify-center items-center group">
-        <img src={imgPath} alt={title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+        <img
+          src={imgPath}
+          alt={title}
+          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+          style={{ objectPosition: focal || 'center 50%' }}
+        />
         
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end justify-center p-3">
           <p className="text-xs text-white/90 font-sans tracking-wide">
@@ -76,38 +81,44 @@ const Chapter5 = () => {
     {
       id: 1,
       title: "First Hug",
-      caption: "The world fell silent. Standing at the arrivals gate, holding you felt like coming home after a lifetime.",
-      imgPath: firstHugImg
+      caption: "The world fell silent. Standing at the arrivals gate, holding you in my embrace felt so good my dear sume ❤️ like coming home after a lifetime. You are my Comfort my dear",
+      imgPath: firstHugImg,
+      focal: "center 50%"
     },
     {
       id: 2,
       title: "First Kiss",
-      caption: "A spark of electric warmth beneath the evening streetlights. The moment time finally stood still for us.",
-      imgPath: firstKissImg
+      caption: "This moment I can't express in the words my dear I just wanna say I love you bb ❤️",
+      imgPath: firstKissImg,
+      focal: "center 50%"
     },
     {
       id: 3,
-      title: "Feeding Each Other",
-      caption: "Spilling noodles, laughing with our mouths full, and finding joy in the smallest, messiest moments.",
-      imgPath: feedingEachOtherImg
+      title: "Special Moment 😘",
+      caption: "I love Your Soft , small & Cute lips ❤️😘😉 everytime I see this pic I just want you more and more 😉",
+      imgPath: feedingEachOtherImg,
+      focal: "center 50%"
     },
     {
       id: 4,
       title: "Holding Hands",
-      caption: "Fingers interlaced, palm against palm. A silent promise that whatever comes, we walk through it together.",
-      imgPath: holdingHandsImg
+      caption: "Holding Your hands in this way feels so good I dont know but it feels like there is somebody just for me ✨💓 and this feel so calming  .",
+      imgPath: holdingHandsImg,
+      focal: "center 50%"
     },
     {
       id: 5,
       title: "Sleeping Together",
-      caption: "Listening to the steady rhythm of your breathing, falling asleep safe in the knowledge that you are right here.",
-      imgPath: sleepingTogetherImg
+      caption: "BB from just chatting about this moment to living this moment can you share how you feel in my embrace dear❤️.",
+      imgPath: sleepingTogetherImg,
+      focal: "center 50%"
     },
     {
       id: 6,
       title: "Creating Memories",
-      caption: "Every polaroid, every ticket stub, every inside joke. An endless gallery of love we built together.",
-      imgPath: creatingMemoriesImg
+      caption: "those happy moments while drining cold coffee in the mall I love you my naughty bb 😘 always keep smiling like this dear 🫶",
+      imgPath: creatingMemoriesImg,
+      focal: "center 10%"
     }
   ];
 
@@ -165,6 +176,7 @@ const Chapter5 = () => {
             title={event.title}
             caption={event.caption}
             imgPath={event.imgPath}
+            focal={event.focal}
           />
         ))}
       </div>

@@ -38,7 +38,7 @@ const LoveCounter = () => {
   });
 
   // Anniversary date: August 1, 2020 (when they first connected)
-  const anniversaryDate = new Date('2020-08-01T00:00:00');
+  const anniversaryDate = new Date('2021-10-14T00:00:00');
 
   useEffect(() => {
     const calculateTime = () => {

@@ -19,64 +19,73 @@ const MemoryWall = () => {
     {
       id: 1,
       title: "Our First Walk",
-      caption: "That cold evening when we talked about everything and nothing.",
+      caption: "Remember Our Jalgoan Walk 🫴",
       path: firstWalkImg,
+      focal: "center 50%", // "horizontal% vertical%" — lower vertical% shows more of the top
       style: "col-span-1 row-span-1 lg:-rotate-6 hover:rotate-0"
     },
     {
       id: 2,
       title: "Silly Face Selfie",
-      caption: "You always make the funniest faces, and I love you for it.",
+      caption: "The First Selfie After we meet 😅",
       path: sillyFaceImg,
+      focal: "center 20%",
       style: "col-span-1 row-span-1 lg:rotate-3 hover:rotate-0 translate-y-4"
     },
     {
       id: 3,
       title: "Coffee Date",
-      caption: "Sharing a warm cup of cappuccino on a rainy afternoon.",
+      caption: "Sharing some Spacial moments ❤️.",
       path: coffeeDateImg,
+      focal: "center 50%",
       style: "col-span-1 row-span-1 lg:-rotate-3 hover:rotate-0 lg:translate-x-2"
     },
     {
       id: 4,
       title: "Your Sweet Smile",
-      caption: "The exact expression that makes my heart skip a beat.",
+      caption: "The exact expression that makes me happy😘 ",
       path: sweetSmileImg,
+      focal: "center 20%",
       style: "col-span-1 row-span-1 lg:rotate-6 hover:rotate-0 -translate-y-4"
     },
     {
       id: 5,
       title: "Monsoon Ride",
-      caption: "Getting completely drenched in Pune rain, laughing all the way.",
+      caption: "This moment we will be recreate soon bb ❤️",
       path: monsoonRideImg,
+      focal: "center 50%",
       style: "col-span-1 row-span-1 lg:-rotate-2 hover:rotate-0 lg:-translate-y-2"
     },
     {
       id: 6,
       title: "Sunset Chasing",
-      caption: "Chasing gold horizons, holding hands, feeling completely at peace.",
+      caption: "Manifesting this moment with you dear 🫶",
       path: sunsetImg,
+      focal: "center 50%",
       style: "col-span-1 row-span-1 lg:rotate-6 hover:rotate-0 translate-x-4"
     },
     {
       id: 7,
       title: "Birthday Celebration",
-      caption: "Cutting cake at midnight, celebrating another year of your life.",
+      caption: "Hope next year we will celebrate this day togther just like this ✨",
       path: birthdayImg,
+      focal: "center 50%",
       style: "col-span-1 row-span-1 lg:-rotate-6 hover:rotate-0 translate-y-6"
     },
     {
       id: 8,
       title: "Holding Hands",
-      caption: "No matter where we go, this is my favorite place to be.",
+      caption: "No matter where we go, this is my favorite place to be.❤️",
       path: holdingHandsImg,
+      focal: "center 50%",
       style: "col-span-1 row-span-1 lg:rotate-3 hover:rotate-0 -translate-x-4"
     },
     {
       id: 9,
       title: "The Quiet Moment",
-      caption: "Just sitting in silence, realizing how lucky I am.",
+      caption: "Just sitting with you & realizing how lucky you are to have such a good man in your life 😉❤️.",
       path: quietMomentImg,
+      focal: "center 50%",
       style: "col-span-1 row-span-1 lg:-rotate-4 hover:rotate-0 translate-y-2"
     }
   ];
@@ -109,7 +118,12 @@ const MemoryWall = () => {
           >
             {/* Image Box */}
             <div className="w-full aspect-[4/3] rounded-lg bg-white/5 border border-white/10 flex flex-col items-center justify-center relative overflow-hidden group select-none">
-              <img src={photo.path} alt={photo.title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+              <img
+                src={photo.path}
+                alt={photo.title}
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                style={{ objectPosition: photo.focal || 'center 50%' }}
+              />
               
               {/* Zoom hover indicator */}
               <div className="absolute inset-0 flex items-center justify-center bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -160,7 +174,12 @@ const MemoryWall = () => {
             >
               {/* Image box inside lightbox */}
               <div className="w-full aspect-[4/3] rounded-lg bg-zinc-100 border border-zinc-300 flex flex-col items-center justify-center relative overflow-hidden">
-                <img src={activePhoto.path} alt={activePhoto.title} className="w-full h-full object-cover" />
+                <img
+                  src={activePhoto.path}
+                  alt={activePhoto.title}
+                  className="w-full h-full object-cover"
+                  style={{ objectPosition: activePhoto.focal || 'center 50%' }}
+                />
               </div>
 
               {/* Text captions */}

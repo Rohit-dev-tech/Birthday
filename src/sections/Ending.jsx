@@ -6,6 +6,10 @@ import gsap from 'gsap';
 
 import bestPhotoImg from '../assets/best_photo_ending.jpeg';
 
+// "horizontal% vertical%" — lower vertical% reveals more of the top of
+// the photo, higher reveals more of the bottom.
+const BEST_PHOTO_FOCAL = 'center 50%';
+
 const Ending = () => {
   const heartRef = useRef(null);
 
@@ -77,7 +81,12 @@ const Ending = () => {
             }}
             className="w-full h-[82%] rounded-2xl bg-white/5 border border-white/10 flex flex-col justify-center items-center relative overflow-hidden"
           >
-            <img src={bestPhotoImg} alt="Our Best Photo" className="w-full h-full object-cover" />
+            <img
+              src={bestPhotoImg}
+              alt="Our Best Photo"
+              className="w-full h-full object-cover"
+              style={{ objectPosition: BEST_PHOTO_FOCAL }}
+            />
           </motion.div>
           
           <div className="text-center font-handwritten text-xl text-white/95 mt-4">

@@ -8,6 +8,17 @@ import autoRideImg from '../assets/auto_ride.png';
 
 gsap.registerPlugin(ScrollTrigger);
 
+// FOCAL POINTS — controls which part of each photo stays visible when the
+// frame crops it (object-fit: cover crops overflow evenly from the center
+// by default, which is why faces near the top of a tall photo can get
+// cut off). Format is "horizontal% vertical%".
+//   vertical 0%   = show the very TOP of the photo, crop from the bottom
+//   vertical 50%  = default center crop
+//   vertical 100% = show the very BOTTOM of the photo, crop from the top
+// Nudge these numbers and save — no other code needs to change.
+const FIRST_DATE_FOCAL = 'center 15%';
+const AUTO_RIDE_FOCAL = 'center 50%';
+
 const Chapter3 = () => {
   const containerRef = useRef(null);
   const pinRef = useRef(null);
@@ -221,7 +232,12 @@ const Chapter3 = () => {
 
             {/* Photo Placeholder */}
             <div className="w-full md:w-1/2 aspect-square rounded-2xl bg-white/5 border border-white/10 flex flex-col justify-center items-center relative overflow-hidden select-none group hover:border-romantic-pink/30 transition-all duration-300">
-              <img src={firstDateImg} alt="First Date" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+              <img
+                src={firstDateImg}
+                alt="First Date"
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                style={{ objectPosition: FIRST_DATE_FOCAL }}
+              />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end justify-center p-4">
                 <p className="text-xs text-white/80 font-sans tracking-wide">
                   First Date ❤️
@@ -308,7 +324,12 @@ const Chapter3 = () => {
 
             {/* Photo Placeholder */}
             <div className="w-full md:w-1/2 aspect-square rounded-2xl bg-white/5 border border-white/10 flex flex-col justify-center items-center relative overflow-hidden select-none group hover:border-indigo-400/30 transition-all duration-300">
-              <img src={autoRideImg} alt="Auto Ride" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+              <img
+                src={autoRideImg}
+                alt="Auto Ride"
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                style={{ objectPosition: AUTO_RIDE_FOCAL }}
+              />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end justify-center p-4">
                 <p className="text-xs text-white/80 font-sans tracking-wide">
                   Auto Ride ❤️

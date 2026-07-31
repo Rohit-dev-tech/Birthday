@@ -91,12 +91,16 @@ const FinalSurprise = ({ onComplete }) => {
     });
   };
 
+  // focal: "horizontal% vertical%" — lower vertical% reveals more of the
+  // top of that photo, higher reveals more of the bottom. Tweak per photo.
   const surprisePhotos = [
-    { id: 1, title: "Our Travels", path: travelImg, style: "left-[5%] top-[15%] rotate-[-12deg]" },
-    { id: 2, title: "Late Night Walks", path: walksImg, style: "right-[5%] top-[12%] rotate-[10deg]" },
-    { id: 3, title: "Silly Selfies", path: selfieImg, style: "left-[8%] bottom-[15%] rotate-[8deg]" },
-    { id: 4, title: "Laughing Together", path: laughImg, style: "right-[8%] bottom-[10%] rotate-[-6deg]" }
+    { id: 1, title: "Our Travels 🫴", path: travelImg, focal: "center 30%", style: "left-[5%] top-[15%] rotate-[-12deg]" },
+    { id: 2, title: "Wishlist ✨", path: walksImg, focal: "center 50%", style: "right-[5%] top-[12%] rotate-[10deg]" },
+    { id: 3, title: "My 😘❤️", path: selfieImg, focal: "center 25%", style: "left-[8%] bottom-[15%] rotate-[8deg]" },
+    { id: 4, title: "My Naughty 😉😘", path: laughImg, focal: "center 30%", style: "right-[8%] bottom-[10%] rotate-[-6deg]" }
   ];
+
+  const CENTERPIECE_FOCAL = 'center 50%';
 
   return (
     <section className="min-h-screen w-full relative py-24 px-4 md:px-8 bg-[#020203] overflow-hidden flex flex-col items-center justify-center">
@@ -172,7 +176,12 @@ const FinalSurprise = ({ onComplete }) => {
               >
                 {/* Surprise Photo Box */}
                 <div className="w-full h-[80%] rounded-md bg-white/5 border border-white/10 flex flex-col justify-center items-center overflow-hidden">
-                  <img src={photo.path} alt={photo.title} className="w-full h-full object-cover" />
+                  <img
+                    src={photo.path}
+                    alt={photo.title}
+                    className="w-full h-full object-cover"
+                    style={{ objectPosition: photo.focal || 'center 50%' }}
+                  />
                 </div>
                 <div className="text-[10px] text-white/60 font-sans tracking-wide mt-2 text-center">
                   {photo.title}
@@ -193,7 +202,12 @@ const FinalSurprise = ({ onComplete }) => {
             >
               {/* Centerpiece main box */}
               <div className="w-full h-[82%] rounded-2xl bg-white/5 border border-white/10 flex flex-col justify-center items-center relative overflow-hidden group">
-                <img src={centerpieceImg} alt="Centerpiece Best" className="w-full h-full object-cover" />
+                <img
+                  src={centerpieceImg}
+                  alt="Centerpiece Best"
+                  className="w-full h-full object-cover"
+                  style={{ objectPosition: CENTERPIECE_FOCAL }}
+                />
               </div>
               <div className="text-center font-handwritten text-2xl text-white/95 mt-4">
                 "Our Beautiful Lifetime... ❤️"
