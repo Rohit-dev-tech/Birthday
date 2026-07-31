@@ -1,0 +1,244 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Inter', sans-serif;
+  --font-serif: 'Playfair Display', serif;
+  --font-handwritten: 'Caveat', cursive;
+
+  --color-romantic-bg: #050505;
+  --color-romantic-pink: #ff8fa3;
+  --color-romantic-purple: #c084fc;
+  --color-romantic-gold: #fbbf24;
+}
+
+/* Custom Base Styles */
+body {
+  background-color: #050505;
+  color: #ffffff;
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  overflow-x: hidden;
+  user-select: none;
+}
+
+/* Hide default cursor on desktop */
+@media (min-width: 1024px) {
+  body {
+    cursor: none;
+  }
+  a, button, [role="button"] {
+    cursor: none !important;
+  }
+}
+
+/* Custom Cursor Base Layout */
+.custom-cursor, .custom-cursor-dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 9999;
+  border-radius: 50%;
+}
+
+.custom-cursor {
+  border: 2px solid rgba(255, 143, 163, 0.45);
+}
+
+/* Custom Scrollbar for Lenis */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #050505;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 143, 163, 0.25);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 143, 163, 0.6);
+}
+
+/* Glassmorphism Styles */
+.glass-card {
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.glass-card:hover {
+  border-color: rgba(255, 143, 163, 0.3);
+  box-shadow: 0 12px 40px 0 rgba(255, 143, 163, 0.1);
+}
+
+.glass-panel {
+  background: rgba(10, 10, 10, 0.6);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Lined Notebook Paper Styling (Chapter 1 & 2) */
+.notebook-paper {
+  background-color: #f9f9f6;
+  color: #2b2b2b;
+  border-radius: 16px;
+  position: relative;
+  background-image: linear-gradient(rgba(225, 225, 208, 0.6) 1px, transparent 1px);
+  background-size: 100% 28px;
+  line-height: 28px;
+  padding: 56px 40px 40px 64px;
+  box-shadow: 
+    0 1px 1px rgba(0,0,0,0.1), 
+    0 10px 0 -5px #f4f4f0, 
+    0 10px 1px -4px rgba(0,0,0,0.15), 
+    0 20px 0 -10px #eaeae6, 
+    0 20px 1px -9px rgba(0,0,0,0.15), 
+    0 30px 30px rgba(0,0,0,0.3);
+}
+
+.notebook-paper::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 48px;
+  width: 2px;
+  background-color: rgba(255, 112, 137, 0.4);
+}
+
+/* Blackboard theme for Chapter 2 */
+.blackboard {
+  background: #121814;
+  border: 12px solid #5a3d28;
+  box-shadow: 0 0 0 2px #3c2617, 0 15px 35px rgba(0,0,0,0.6);
+  color: #f3f4f6;
+  font-family: 'Caveat', cursive;
+  position: relative;
+}
+.blackboard::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: radial-gradient(circle, transparent 30%, rgba(0,0,0,0.4) 100%),
+              url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.08'/%3E%3C/svg%3E");
+  pointer-events: none;
+  border-radius: 4px;
+}
+
+/* Train Window Shaking Animation (Chapter 3 - Scene 1) */
+@keyframes train-shake {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  20% { transform: translateY(-1.5px) rotate(0.1deg); }
+  40% { transform: translateY(1.5px) rotate(-0.1deg); }
+  60% { transform: translateY(-0.8px) rotate(0.05deg); }
+  80% { transform: translateY(0.8px) rotate(-0.05deg); }
+}
+.shake-train {
+  animation: train-shake 4s ease-in-out infinite;
+}
+
+/* Audio waves animation */
+.audio-bar {
+  display: inline-block;
+  width: 3px;
+  height: 4px;
+  background-color: #ff8fa3;
+  margin: 0 1.5px;
+  border-radius: 2px;
+  animation: bounce-audio 1.2s ease-in-out infinite alternate;
+}
+.audio-bar:nth-child(2) { animation-delay: 0.15s; }
+.audio-bar:nth-child(3) { animation-delay: 0.3s; }
+.audio-bar:nth-child(4) { animation-delay: 0.45s; }
+.audio-bar:nth-child(5) { animation-delay: 0.6s; }
+
+@keyframes bounce-audio {
+  0% { transform: scaleY(1); }
+  100% { transform: scaleY(5.5); }
+}
+
+/* Rain Effect Overlay */
+.rain-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-image: linear-gradient(transparent, rgba(5,5,5,0.8)),
+                    url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 120 120"><line x1="20" y1="0" x2="5" y2="60" stroke="rgba(255,255,255,0.08)" stroke-width="1.5"/></svg>');
+  opacity: 0.8;
+  animation: rain-fall 0.7s linear infinite;
+  pointer-events: none;
+}
+@keyframes rain-fall {
+  0% { background-position: 0 0; }
+  100% { background-position: -50px 600px; }
+}
+
+/* 3D Flip Card Styles */
+.perspective-1000 {
+  perspective: 1000px;
+}
+.backface-hidden {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
+.transform-style-3d {
+  transform-style: preserve-3d;
+}
+
+/* Text glow */
+.glow-text-pink {
+  text-shadow: 0 0 8px rgba(255, 143, 163, 0.5), 0 0 20px rgba(255, 143, 163, 0.3);
+}
+.glow-text-purple {
+  text-shadow: 0 0 8px rgba(192, 132, 252, 0.5), 0 0 20px rgba(192, 132, 252, 0.3);
+}
+.glow-text-gold {
+  text-shadow: 0 0 8px rgba(251, 191, 36, 0.5), 0 0 20px rgba(251, 191, 36, 0.3);
+}
+
+/* Custom radial glows */
+.radial-glow-pink {
+  background: radial-gradient(circle, rgba(255, 143, 163, 0.15) 0%, transparent 70%);
+}
+.radial-glow-purple {
+  background: radial-gradient(circle, rgba(192, 132, 252, 0.12) 0%, transparent 70%);
+}
+.radial-glow-gold {
+  background: radial-gradient(circle, rgba(251, 191, 36, 0.1) 0%, transparent 70%);
+}
+
+/* Polaroid Styling */
+.polaroid {
+  background: #fdfdfd;
+  padding: 16px 16px 40px 16px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+  border-radius: 2px;
+  color: #1a1a1a;
+  transform-style: preserve-3d;
+  transition: box-shadow 0.3s ease;
+}
+.polaroid:hover {
+  box-shadow: 0 25px 50px rgba(255, 143, 163, 0.25);
+}
+
+/* Hide #root's default formatting styles */
+#root {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  text-align: left !important;
+  border-inline: none !important;
+  min-height: 100vh !important;
+  display: block !important;
+  box-sizing: border-box !important;
+}
