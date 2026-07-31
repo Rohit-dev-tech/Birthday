@@ -118,10 +118,10 @@ const LoveLetter = () => {
               >
                 <p className="font-bold text-zinc-950 text-xl">My Dearest,</p>
                 <p className="mt-2 text-base md:text-lg">
-                  Six years. That's 2,190 days of smiles, late night talks, and falling in love with you over and over again.
+                  Four Years. That's 1753 days of smiles, late night talks, and falling in love with you over and over again.
                 </p>
                 <p className="mt-2 text-base md:text-lg">
-                  From high school corridors to Jalgaon auto rides, and Pune-Sambhajinagar distance, you have been my constant harbor.
+                  From school Classroom to Jalgaon auto rides, and Pune-Sambhajinagar distance, you have been my constant harbor.
                 </p>
                 <p className="mt-2 text-base md:text-lg">
                   Thank you for choosing me every single day. Happy Birthday, my love. Here's to forever. ❤️
