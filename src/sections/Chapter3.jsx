@@ -270,7 +270,7 @@ const Chapter3 = () => {
                     style={{ transformOrigin: 'center 10px' }}
                   />
                 </svg>
-                <span className="text-xs text-amber-500/80 font-sans tracking-wider uppercase">Warm candlelight dinner</span>
+                <span className="text-xs text-amber-500/80 font-sans tracking-wider uppercase">First lunch with You</span>
               </div>
 
               <h3 className="text-2xl font-serif text-white/95 leading-relaxed italic">
