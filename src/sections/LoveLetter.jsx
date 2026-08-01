@@ -85,7 +85,7 @@ const LoveLetter = () => {
           A Letter For You
         </h2>
         <p className="text-white/60 font-sans text-sm mt-4 tracking-wide leading-relaxed">
-          Six years of shared moments, packed inside a small envelope. Click on the wax seal to open it and read.
+          Four years of shared moments, packed inside a small envelope. Click on the wax seal to open it and read.
         </p>
       </div>
 

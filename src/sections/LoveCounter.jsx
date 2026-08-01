@@ -100,7 +100,7 @@ const LoveCounter = () => {
           Time We Spent Together
         </h2>
         <p className="text-white/60 font-sans text-sm mt-4 tracking-wide leading-relaxed">
-          Six years of laughing, growing, overcoming distances, and falling deeper in love. Here is the exact count of our forever.
+          Four years of laughing, growing, overcoming distances, and falling deeper in love. Here is the exact count of our forever.
         </p>
       </div>
 
