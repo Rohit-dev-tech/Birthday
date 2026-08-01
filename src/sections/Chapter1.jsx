@@ -19,13 +19,13 @@ const Chapter1 = () => {
     {
       id: 1,
       title: "Birthday Wish",
-      date: "October 2020",
+      date: "October 2021",
       description: "It all started with a simple 'Happy Birthday' message from You  on my speacial day. A tiny spark that set our world in motion."
     },
     {
       id: 2,
       title: "Instagram Reels Sharing ",
-      date: "From October  2020",
+      date: "From October  2021 ",
       description: "Sharing memes, reels and all from that day , btw Initiative mi ghetla hota sang bara first reel konti hoti apli 😏."
     },
     {
