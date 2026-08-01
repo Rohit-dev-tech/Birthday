@@ -42,9 +42,9 @@ const Chapter1 = () => {
     },
     {
       id: 5,
-      title: "People Teasing Us",
+      title: "Friends started Teasing Us",
       date: "Full 11th",
-      description: "Classmates noticed the smiles. Friends kept laughing and pairing us up. out Tshirt Color matching Speacially that Red one and Brown one "
+      description: "Classmates noticed the smiles. Friends kept laughing and pairing us up. our tshirt Color matching Speacially that Red one and Brown one & Do you remeber that Brown Munde "
     },
     {
       id: 6,
